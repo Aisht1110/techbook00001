@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Updated</title>
+    <!-- Use a more visually interesting font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Redirect to the new page after 5 seconds -->
+    <meta http-equiv="refresh" content="5;url=https://btechbook.netlify.app/">
+    <style>
+        /* Custom styles for the body and fonts */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+        }
+        
+        /* Keyframe animation for a subtle fade-in effect */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Apply the animation to the main card */
+        .animated-card {
+            animation: fadeInScale 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
 
+    <!-- Main container with a modern, animated card design -->
+    <div class="animated-card bg-white p-10 rounded-3xl shadow-2xl max-w-lg w-full text-center border border-gray-200">
+        <!-- Icon at the top of the card -->
+        <div class="flex justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-16 h-16 text-blue-500">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 2.25l6.082 6.082a1.5 1.5 0 010 2.12L10.952 18.232a1.5 1.5 0 01-2.12 0L2.268 12.569a1.5 1.5 0 010-2.122l4.444-4.444m3.023 2.923L5.803 14.5m10.852-6.524a2.25 2.25 0 010 3.182L10.375 18.23a2.25 2.25 0 01-3.182 0M2.268 12.569a2.25 2.25 0 010 3.182l1.018 1.018" />
+            </svg>
+        </div>
+
+        <!-- Title and description -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-3">Site Moved!</h1>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+            Our website has a new home. You will be automatically redirected to our new location in just a moment.
+        </p>
+
+        <!-- Link to the new page -->
+        <p class="text-sm text-gray-500 mb-8">
+            If you are not redirected, please use the link below:
+        </p>
+        <a href="https://btechbook.netlify.app/" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg">
+            Go to New Website
+        </a>
+
+        <!-- Countdown timer for redirection -->
+        <div class="mt-8 text-md font-medium text-gray-500">
+            Redirecting in <span id="countdown" class="font-bold text-blue-600">5</span> seconds...
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer functionality
+        const countdownElement = document.getElementById('countdown');
+        let countdown = 5;
+
+        // Update the countdown every second
+        const intervalId = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(intervalId); // Stop the timer when it reaches zero
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
